@@ -63,7 +63,7 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
-
+    
     /**
      * Start playing a file in the collection.
      * Use stopPlaying() to stop it playing.
@@ -82,4 +82,11 @@ public class MusicOrganizer
     {
         player.stop();
     }
+    
+    public void listAllFiles() {
+       for (String filename : files) {
+           System.out.println(filename);
+        }
+    }
+
 }

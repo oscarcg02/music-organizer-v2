@@ -100,4 +100,12 @@ public class MusicOrganizer
         System.out.println("Error, no hay ninguna cancion con esas caracterisiticas");
             
     }
+    
+    public void playSamplesArtist (String searchArtist) {
+        for (String filename : files) {
+            if (filename.contains(searchArtist)) {
+                player.playSample(filename);
+            }
+        }   
+    }
 }

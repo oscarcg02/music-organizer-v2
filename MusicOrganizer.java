@@ -92,13 +92,17 @@ public class MusicOrganizer
     }
 
     public void listMatching (String searchString) {
+        boolean characterFound = false;
         for (String filename : files) {
             if (filename.contains(searchString)) {
                 System.out.println(filename);
+                characterFound = true;
             }
         }
-        System.out.println("Error, no hay ninguna cancion con esas caracterisiticas");
-            
+         if (!characterFound) {
+            System.out.println("Error, no hay ninguna cancion con esas caracterisiticas");
+        }
+        
     }
     
     public void playSamplesArtist (String searchArtist) {

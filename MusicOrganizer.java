@@ -105,6 +105,14 @@ public class MusicOrganizer
         
     }
     
+    public void deleteSongsWithText (String searchDeleteString) {
+        for (String filename : files) {
+            if (filename.contains(searchDeleteString)) {
+                files.remove(filename);
+            }
+        }     
+    }
+    
     public void playSamplesArtist (String searchArtist) {
         for (String filename : files) {
             if (filename.contains(searchArtist)) {

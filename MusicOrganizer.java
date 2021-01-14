@@ -84,11 +84,12 @@ public class MusicOrganizer
     }
 
     public void listAllFiles() {
-        int posicion = 0;
-        for (String filename : files) {
-            posicion = posicion + 1;
-            System.out.println(posicion  + "." + filename);
-        }
+        int index = 0;
+        while(index < files.size()) {
+            String filename = files.get(index); 
+            System.out.println(filename);
+            index++;         
+        }      
     }
 
     public void listMatching (String searchString) {
@@ -103,14 +104,6 @@ public class MusicOrganizer
             System.out.println("Error, no hay ninguna cancion con esas caracterisiticas");
         }
         
-    }
-    
-    public void deleteSongsWithText (String searchDeleteString) {
-        for (String filename : files) {
-            if (filename.contains(searchDeleteString)) {
-                files.remove(filename);
-            }
-        }     
     }
     
     public void playSamplesArtist (String searchArtist) {

@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 /**
  * A class to hold details of audio files.
  * This version can play the files.
@@ -100,12 +100,34 @@ public class MusicOrganizer
                 characterFound = true;
             }
         }
-         if (!characterFound) {
+        if (!characterFound) {
             System.out.println("Error, no hay ninguna cancion con esas caracterisiticas");
         }
-        
+
     }
-    
+
+    /**
+     * Localiza el índice del primer archivo que se corresponde con
+     * la cadena de búsqueda indicada .
+     * @param searchString La cadena que hay que buscar.
+     * @return El índice de la primera aparición o -1 si
+     * no se encuentra ninguna correspondencia
+     */
+    public int findFirst(String searchString) {
+        int resultado = -1;
+        int index = 0;
+        boolean searching = true;
+        while (index < files.size() && searching) {
+            if (files.get(index).contains(searchString)) {
+                searching = false;
+                resultado = index + 1;
+            }
+            index++;
+        }
+        
+        return resultado;  
+    }
+
     public void playSamplesArtist (String searchArtist) {
         for (String filename : files) {
             if (filename.contains(searchArtist)) {
